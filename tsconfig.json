@@ -1,0 +1,40 @@
+
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "lib": [
+      "dom",
+      "es2017"
+    ],
+    "target": "esnext",
+    // module
+    "module": "esnext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    // js
+    "alwaysStrict": true,
+    "sourceMap": true,
+    "jsx": "preserve",
+    // no fallthrough
+    "noFallthroughCasesInSwitch": true,
+    // no unused
+    "noUnusedLocals": true,
+    // no unreachable
+    "allowUnreachableCode": false,
+    // strict type check
+    "strict": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ]
+}
+
