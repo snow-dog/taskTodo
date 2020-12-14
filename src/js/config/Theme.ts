@@ -23,4 +23,15 @@ export const Theme = createMuiTheme({
     type: 'light',
     primary: primary,
   },
+  typography: {
+    h1: {
+      fontSize: '24px',
+    },
+    h2: {
+      fontSize: '18px',
+    },
+    h3: {
+      fontSize: '14px',
+    },
+  }
 })
