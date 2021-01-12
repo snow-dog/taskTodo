@@ -4,10 +4,9 @@ import { AppBar, TextField, Button } from '@material-ui/core'
 import { AddCircle } from '@material-ui/icons'
 import { Task } from './models/Task'
 import { CardType } from './models/CardType'
-// import { TaskBox } from './components/TaskBox'
 import { CardBox } from './components/CardBox'
 
-// import { Card } from '@material-ui/core'
+import dayjs from 'dayjs'
 
 const useStyles = makeStyles(theme => ({
   headerBar: {
@@ -41,13 +40,14 @@ const useStyles = makeStyles(theme => ({
 
 export const App = () => {
   const classes = useStyles()
+  const today = dayjs().format('YYYY/MM/DD')
   // const [inputTask, setInputTask] = useState<string>('')
   const [task, setTask] = useState<Task[]>([])
   const [error, setError] = useState<string>('')
   const [cardErr, setCardErr] = useState<string>('')
   // const [editingTask, setEditingTask] = useState<string>('')
 
-  const [cards, setCards] = useState<CardType[]>([{ id: 0, name: 'IDEA-1', tasks: [{ id: 0, name: 'idea1-task' }] }])
+  const [cards, setCards] = useState<CardType[]>([])
   const [inputCard, setInputCard] = useState<string>('')
   // const [cardError, setCardError] = useState<string>('')
 
@@ -135,7 +135,7 @@ export const App = () => {
   }
 
   const handleClear = () => {
-    setTask([])
+    setCards([])
     setError('')
   }
 
@@ -143,6 +143,7 @@ export const App = () => {
     <>
       <AppBar color="primary" position="static">
         <div className={classes.headerBar}>
+          <p>Today: {today}</p>
           <Typography variant="h1">My Todo List</Typography>
           <div onClick={() => handleClear()}>CLEAR</div>
         </div>
